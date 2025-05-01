@@ -15,19 +15,22 @@ This project focuses on converting Arabic natural language questions into execut
 
 ---
 
-## 🗃️ Dataset
+## 🗃️ [Dataset](https://www.kaggle.com/datasets/mazenmahmoud79/txttosql-nlp)
 
 - Format: JSONL file with fields:
   - `arabic`: The natural language question in Arabic.
   - `query`: The ground-truth SQL query.
   - `db_id`: Corresponding database ID (used to load the `.sqlite` and `.sql` files).
+  - `question `: The natural language question in English.
+
 
 Example entry:
 ```json
 {
-  "arabic": "كم عدد الأساتذة في قسم علوم الحاسوب؟",
-  "query": "SELECT count(*) FROM professor WHERE dept = 'CS';",
-  "db_id": "academic"
+  "question":"How many heads of the departments are older than 56 ?"
+  "query":"SELECT count(*) FROM head WHERE age > 56"
+  "arabic":"كم عدد رؤساء الأقسام الذين تزيد أعمارهم عن 56 سنة؟"
+  "db_id":"department_management"
 }
 ```
 
